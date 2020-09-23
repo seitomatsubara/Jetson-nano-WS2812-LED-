@@ -44,3 +44,6 @@ Use the RGBto3Bytes function to make the specified LEDs glow.
 SPItoWS.LED_OFF_ALL()
 ````
 Turn off all LEDs.
+
+## Example (__main__)
+The LED turns red, green and blue for 1 second and then goes off.
