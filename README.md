@@ -13,7 +13,9 @@ SPItoWS class generates WS2812 signal via SPI connection.
 
 Please setup your SPI pin.
 
+```
 $ sudo /opt/nvidia/jetson-io/jetson-io.py
+```
 
 Connect your SPI MOSI pin to LED tape's signal pin.
 
@@ -24,9 +26,18 @@ The GND connection is also needed.
 It is recommended that power is not supplied from the Jetson nano.
 
 ## Code
+Class:
+
+```
 SPItoWS(<The number of your LEDs>)
-  SPItoWS.RGBto3Bytes(i, R, G, B)
-  
+```
+
+The function:
+
+```
+SPItoWS.RGBto3Bytes(i, R, G, B)
+```
+
 i: The location of the LED.
 
 R, G, B: The intensity of the LEDs. The number is limited to 0-255.
