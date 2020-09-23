@@ -11,7 +11,13 @@ You can install it via pip.
 ## How to use
 SPItoWS class generates WS2812 signal via SPI connection.
 
+Please setup your SPI pin.
+
+$ sudo /opt/nvidia/jetson-io/jetson-io.py
+
 Connect your SPI MOSI pin to LED tape's signal pin.
+
+If you use SPI1, The MOSI pin number is 19.
 
 The GND connection is also needed.
 
