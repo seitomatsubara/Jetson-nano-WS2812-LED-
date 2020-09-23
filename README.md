@@ -1,6 +1,10 @@
 # Jetson-nano-WS2812-LED-
 This is the code for Jetson nano for producing WS2812 signal.
+This is Python3 code.
 
+# import
+You have to import spidev.
+You can install it via pip.
 
 ## How to use
 SPItoWS class generates WS2812 signal via SPI connection.
