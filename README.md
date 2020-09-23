@@ -21,6 +21,8 @@ Connect your SPI MOSI pin to LED tape's signal pin.
 
 If you use SPI1, The MOSI pin number is 19.
 
+If you use SPI for this connection, you cannot use 21, 23, 24 and 26 pins for another usage.
+
 The GND connection is also needed.
 
 It is recommended that power is not supplied from the Jetson nano.
