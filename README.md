@@ -3,43 +3,44 @@ This is the code for Jetson nano for producing WS2812 signal.
 
 This is Python3 code.
 
-## import
-You have to import spidev.
-
-You can install it via pip.
-
-## How to use
-SPItoWS class generates WS2812 signal via SPI connection.
-
-Please setup your SPI pin.
-
-```
+## Preparation
+### Configuring SPI in Jetson-IO tool
+````
 $ sudo /opt/nvidia/jetson-io/jetson-io.py
-```
+````
 
-Connect your SPI MOSI pin to LED tape's signal pin.
+## Connection.
+The signal pins are connected to 19 pins for spi1 or 13 pins for spi2.
+Due to the spi communication protocol, the pins used for spi communication (21, 23, 24, and 26 for spi1) will be unavailable.
+GND must also be connected.
+Power must be supplied accordingly.
 
-If you use SPI1, The MOSI pin number is 19.
+## Installing spidev by pip
+````
+$ sudo pip install spidev
+````
 
-If you use SPI for this connection, you cannot use 21, 23, 24 and 26 pins for another usage.
+## Usage.
+````
+SPItoWS(<number of LEDs>)
+````
+### LED designation.
 
-The GND connection is also needed.
-
-It is recommended that power is not supplied from the Jetson nano.
-
-## Code
-Class:
-
-```
-SPItoWS(<The number of your LEDs>)
-```
-
-The function:
-
-```
+````
 SPItoWS.RGBto3Bytes(i, R, G, B)
-```
+````
+i: Position of the LED
+R, G, B: LED intensity, limited to 0-255
 
-i: The location of the LED.
+### LED glow.
 
-R, G, B: The intensity of the LEDs. The number is limited to 0-255.
+````
+SPItoWS.LED_show()
+````
+Use the RGBto3Bytes function to make the specified LEDs glow.
+
+### Turn off all.
+````
+SPItoWS.LED_OFF_ALL()
+````
+Turn off all LEDs.
